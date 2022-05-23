@@ -2,5 +2,5 @@
 
 interface DocumentationInterface
 {
-    public function definitions(): self;
+    public function definition(): self;
 }
