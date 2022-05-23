@@ -2,9 +2,7 @@
 
 namespace Gipfel\DocumentationGenerator\Definitions\Parameter;
 
-use Gipfel\DocumentationGenerator\Contracts\DefinitionContract;
-
-class Parameter implements DefinitionContract
+class Parameter
 {
     public static function define(
         string $name,
@@ -18,6 +16,7 @@ class Parameter implements DefinitionContract
 
     public function __construct(
         protected string $name,
+        protected ?string $in = null,
         protected ?string $description = null,
         protected bool $required = false,
         protected bool $deprecated = false,
