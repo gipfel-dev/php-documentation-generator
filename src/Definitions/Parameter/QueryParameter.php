@@ -1,6 +1,6 @@
 <?php
 
-namespace Gipfel\DocumentationGenerator\Definitions;
+namespace Gipfel\DocumentationGenerator\Definitions\Parameter;
 
 class QueryParameter extends Parameter
 {
