@@ -2,9 +2,6 @@
 
 namespace Gipfel\DocumentationGenerator\Definitions;
 
-use Attribute;
-
-#[Attribute]
 class Method
 {
     public const GET = 'GET';

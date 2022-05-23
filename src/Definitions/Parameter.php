@@ -2,9 +2,6 @@
 
 namespace Gipfel\DocumentationGenerator\Definitions;
 
-use Attribute;
-
-#[Attribute]
 class Parameter
 {
     protected string $in = 'body';
