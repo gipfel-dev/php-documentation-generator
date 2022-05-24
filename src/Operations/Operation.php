@@ -4,7 +4,7 @@ namespace Gipfel\DocumentationGenerator\Operations;
 
 use Gipfel\DocumentationGenerator\Contracts\OperationContract;
 
-class Operation
+class Operation implements OperationContract
 {
     public static function define(
         ?string $tags = null,
@@ -13,27 +13,17 @@ class Operation
         array $parameters = [],
         array $responses = [],
         bool $deprecated = false,
-        array $servers = []
     ): Operation {
-        return new Operation(
-            tags: $tags,
-            summary: $summary,
-            description: $description,
-            parameters: $parameters,
-            responses: $responses,
-            deprecated: $deprecated,
-            servers: $servers
-        );
+        return new self($tags, $summary, $description, $parameters, $responses, $deprecated);
     }
 
     public function __construct(
-        ?string $tags = null,
-        ?string $summary = null,
-        ?string $description = null,
-        array $parameters = [],
-        array $responses = [],
-        bool $deprecated = false,
-        array $servers = [],
+        protected ?string $tags = null,
+        protected ?string $summary = null,
+        protected ?string $description = null,
+        protected ?array $parameters = [],
+        protected ?array $responses = [],
+        protected bool $deprecated = false,
     ) {
     }
 }

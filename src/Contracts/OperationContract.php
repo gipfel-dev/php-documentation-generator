@@ -5,7 +5,11 @@ namespace Gipfel\DocumentationGenerator\Contracts;
 interface OperationContract
 {
     public static function define(
-        bool $deprecated = false,
+        ?string $tags = null,
+        ?string $summary = null,
+        ?string $description = null,
         array $parameters = [],
+        array $responses = [],
+        bool $deprecated = false,
     );
 }

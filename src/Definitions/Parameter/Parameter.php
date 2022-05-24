@@ -2,7 +2,9 @@
 
 namespace Gipfel\DocumentationGenerator\Definitions\Parameter;
 
-class Parameter
+use Gipfel\DocumentationGenerator\Contracts\ParameterContract;
+
+class Parameter implements ParameterContract
 {
     public static function define(
         string $name,
@@ -11,7 +13,7 @@ class Parameter
         bool $deprecated = false,
         bool $allowEmptyValues = false,
     ): Parameter {
-        return new Parameter($name, $description, $required, $deprecated, $allowEmptyValues);
+        return new self($name, $description, $required, $deprecated, $allowEmptyValues);
     }
 
     public function __construct(

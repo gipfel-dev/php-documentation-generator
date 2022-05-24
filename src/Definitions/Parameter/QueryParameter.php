@@ -2,7 +2,9 @@
 
 namespace Gipfel\DocumentationGenerator\Definitions\Parameter;
 
-class QueryParameter extends Parameter
+use Gipfel\DocumentationGenerator\Contracts\ParameterContract;
+
+class QueryParameter extends Parameter implements ParameterContract
 {
     public function __construct(
         string $name,
@@ -11,6 +13,6 @@ class QueryParameter extends Parameter
         bool $deprecated = false,
         bool $allowEmptyValues = false
     ) {
-        parent::__construct($name, 'query', $description, $required, $deprecated, $allowEmptyValues);
+        return parent::__construct($name, 'query', $description, $required, $deprecated, $allowEmptyValues);
     }
 }
